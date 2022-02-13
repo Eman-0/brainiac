@@ -1,11 +1,12 @@
 import './App.css';
+import FetchHeroes from './components/fetch-heroes';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Super Hero
-      </header>
+      <div className='score-board'><p>Max Score: 12</p> <p>Current Score: </p></div>
+      <FetchHeroes/>
     </div>
   );
 }
