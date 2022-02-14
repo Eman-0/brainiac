@@ -31,7 +31,7 @@ function FetchHeroes () {
         return (
             <div className="card-container">
                 {heroList.slice(0,12).map(hero => (
-                    <DisplayHeroes hero={hero}/>
+                    <DisplayHeroes key={hero.id} hero={hero}/>
                 ))}
             </div>
         )  
