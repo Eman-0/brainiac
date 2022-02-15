@@ -1,9 +1,12 @@
+import PlayRound from "../utils/game-utils"
 
 function Card (props) {
+    if (props.hero === null) return null;
+
     return (
-        <div className="card">
-            <img src={props.heroImg} alt="null"/>
-            <p>{props.heroName}</p>
+        <div onClick={(e) => PlayRound(props)} className="card">
+            <img src={props.hero.images.sm} alt="null"/>
+            <p>{props.hero.name}</p>
         </div>
     );
 }
