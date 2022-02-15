@@ -4,7 +4,7 @@ function restartGame (setClickedHeroes, setScore) {
 }
 
 function PlayRound ( { score, setScore, clickedHeroes, setClickedHeroes, hero }) {
-    if (clickedHeroes.includes(hero.name)){
+    if (clickedHeroes.includes(hero.name)) {
         restartGame(setClickedHeroes, setScore);
     } else {
         setClickedHeroes((prevState) => [...prevState, hero.name]);

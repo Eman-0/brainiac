@@ -12,8 +12,9 @@ function FetchHeroes (props) {
         .then(res => res.json())
         .then(
             (result) => {
+                const positionInHeroArray = Math.floor(Math.random() * (500 - 12) + 12 );
                 setIsLoaded(true);
-                setHeroList(result);
+                setHeroList(result.slice(positionInHeroArray, positionInHeroArray + 12));
             },
             (error) => {
                 setIsLoaded(true);
@@ -28,8 +29,9 @@ function FetchHeroes (props) {
         return <div>Loading Heroes</div>;
     } else {
         return (
+            
             <div className="card-container">
-                {heroList.slice(0,12).map(hero => (
+                {heroList.sort(() => Math.random() - 0.5).map(hero => (
                     <Card key={hero.id} score={props.score} setScore={props.setScore} hero={hero}
                         clickedHeroes={clickedHeroes} setClickedHeroes={setClickedHeroes}/>
                 ))}
