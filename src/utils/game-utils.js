@@ -1,14 +1,15 @@
-function restartGame (setClickedHeroes, setScore) {
+function restartGame (setClickedHeroes, setCurScore, setMaxScore, curScore) {
     setClickedHeroes([]);
-    setScore(0);
+    setCurScore(0);
+    setMaxScore(curScore);
 }
 
-function PlayRound ( { score, setScore, clickedHeroes, setClickedHeroes, hero }) {
+function PlayRound ( { curScore, setCurScore, maxScore, setMaxScore, clickedHeroes, setClickedHeroes, hero }) {
     if (clickedHeroes.includes(hero.name)) {
-        restartGame(setClickedHeroes, setScore);
+        restartGame(setClickedHeroes, setCurScore, setMaxScore, curScore);
     } else {
         setClickedHeroes((prevState) => [...prevState, hero.name]);
-        setScore(score + 1);
+        setCurScore(curScore + 1);
     }  
 }
 

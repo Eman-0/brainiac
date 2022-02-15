@@ -32,7 +32,7 @@ function FetchHeroes (props) {
             
             <div className="card-container">
                 {heroList.sort(() => Math.random() - 0.5).map(hero => (
-                    <Card key={hero.id} score={props.score} setScore={props.setScore} hero={hero}
+                    <Card key={hero.id} {...props} hero={hero}
                         clickedHeroes={clickedHeroes} setClickedHeroes={setClickedHeroes}/>
                 ))}
             </div>
