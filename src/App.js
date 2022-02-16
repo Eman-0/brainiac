@@ -7,8 +7,8 @@ function App() {
   const [maxScore, setMaxScore] = useState(0)
   return (
     <div className="app">
-      <div className='score-board'><p>Max Score: {maxScore}</p> <p>Current Score: {curScore}</p></div>
-      <FetchHeroes curScore={curScore} setCurScore={setCurScore} maxScore={maxScore} setMaxScore={setMaxScore}/>
+      <div className="score-board"><p>Max Score: {maxScore}</p> <p>Current Score: {curScore}</p></div>
+      <FetchHeroes curScore={curScore} setCurScore={setCurScore} maxScore={maxScore} setMaxScore={setMaxScore}/> 
     </div>
   );
 }

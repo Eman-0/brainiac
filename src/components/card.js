@@ -5,7 +5,7 @@ function Card (props) {
 
     return (
         <div onClick={(e) => PlayRound(props)} className="card">
-            <img src={props.hero.images.sm} alt="null"/>
+            <img src={props.hero.images.lg} alt="null"/>
             <p>{props.hero.name}</p>
         </div>
     );
