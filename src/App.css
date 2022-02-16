@@ -1,19 +1,21 @@
 
 body{
+  color: white;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: brown;
 }
 
 .app { 
   text-align: center;
-  background-color: bisque;
 }
 
 .score-board {
-  background-color: aqua;
+  
+  font-size:larger;
+  font-weight: bold;
   position: fixed;
   top: 100px;
   left: 0;
@@ -21,7 +23,6 @@ body{
 }
 
 .card-container {
-  border-style: solid;
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   grid-template-columns: repeat(6, minmax(min(100px, 100%), 1fr));
@@ -34,14 +35,15 @@ body{
   padding: 10px;
   margin: 10px;
 }
-.card:hover{
-  width: 150px;
-}
 
 img {
   border-radius: 12px;
   max-width: 100%;
   max-height: 150px;
+}
+img:hover{
+  color:greenyellow;
+  box-shadow: 0 0 100px;
 }
 
 
