@@ -4,7 +4,7 @@ function restartGame (setClickedHeroes, setCurScore, setMaxScore, curScore) {
     setMaxScore(curScore);
 }
 
-function PlayRound ( { curScore, setCurScore, maxScore, setMaxScore, clickedHeroes, setClickedHeroes, hero }) {
+function PlayRound ( { curScore, setCurScore, setMaxScore, clickedHeroes, setClickedHeroes, hero }) {
     if (clickedHeroes.includes(hero.name)) {
         restartGame(setClickedHeroes, setCurScore, setMaxScore, curScore);
     } else {
