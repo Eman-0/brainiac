@@ -1,3 +1,4 @@
+
 function restartGame (setClickedHeroes, setCurScore, setMaxScore, curScore) {
     setClickedHeroes([]);
     setCurScore(0);
