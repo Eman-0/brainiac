@@ -39,7 +39,6 @@ function FetchHeroes (props) {
         if (curScore === 12){
               Winner(setIsPlayAgain);
               setMaxScore(curScore);
-              setCurScore(0);
         }
          
     }, [curScore])
