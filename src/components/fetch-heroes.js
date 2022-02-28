@@ -10,7 +10,6 @@ function FetchHeroes (props) {
     const [isPlayAgain, setIsPlayAgain] = useState(false);
     const [shortenedHeroList, setShortenedHeroList] = useState([]);
     const curScore = props.curScore;
-    const setCurScore = props.setCurScore;
     const setMaxScore = props.setMaxScore;
 
     useEffect(() => {
@@ -36,7 +35,7 @@ function FetchHeroes (props) {
     }, [heroList, isPlayAgain])
 
     useEffect(() => {
-        if (curScore === 12){
+        if (curScore % 12 === 0){
               Winner(setIsPlayAgain);
               setMaxScore(curScore);
         }

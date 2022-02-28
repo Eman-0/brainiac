@@ -1,5 +1,3 @@
-
-
 function Winner (setIsPlayAgain) {
     const wonPopup = document.querySelector('.popup-modal');
     const backdrop = document.querySelector('.backdrop');
