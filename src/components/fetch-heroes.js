@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Card from "./card";
-import Winner from "./winner";
 
 function FetchHeroes (props) {
     const [error, setError] = useState(null);
@@ -31,12 +30,15 @@ function FetchHeroes (props) {
 
     useEffect(() => {
         const positionInHeroArray = Math.floor(Math.random() * (500 - 12) + 12 );
-        setShortenedHeroList(heroList.slice(positionInHeroArray, positionInHeroArray + 12));  
+        setShortenedHeroList(heroList.slice(positionInHeroArray, positionInHeroArray + 12));
+        setIsPlayAgain(false);
     }, [heroList, isPlayAgain])
 
     useEffect(() => {
-        if (curScore % 12 === 0){
-              Winner(setIsPlayAgain);
+        if (curScore !== 0 && (curScore % 12) === 0){
+            playAgain(setIsPlayAgain);
+
+            //   Winner(setIsPlayAgain);
               setMaxScore(curScore);
         }
          
@@ -57,6 +59,23 @@ function FetchHeroes (props) {
             </div>
         )  
     }
+}
+
+function playAgain (setIsPlayAgain) {
+    const youWonPopup = document.querySelector('.popup-modal');
+    const backdrop = document.querySelector('.backdrop');
+    backdrop.classList.toggle('show');
+    youWonPopup.classList.toggle('show');
+
+    const playAgainBtn = document.getElementById('close-modal');
+    playAgainBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('play agian clicked');
+        backdrop.classList.toggle('show');
+        youWonPopup.classList.toggle('show');
+        setIsPlayAgain(true);
+    }, {once: true});
+
 }
 
 export default FetchHeroes;

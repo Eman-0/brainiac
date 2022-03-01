@@ -12,7 +12,7 @@ function App() {
       <div className="popup-modal">
             <h1>You Won!</h1>
             <button id="close-modal">Play Again</button>
-        </div>
+      </div>
       <div className="score-board"><p>Best Score: {maxScore}</p> <p>Current Score: {curScore}</p></div>
       <FetchHeroes curScore={curScore} setCurScore={setCurScore} maxScore={maxScore} setMaxScore={setMaxScore}/> 
     </div>
