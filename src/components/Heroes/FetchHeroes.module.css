@@ -1,6 +1,9 @@
 .hero-display {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(6, minmax(1em, 1fr));
+    font-size: 0.9rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }

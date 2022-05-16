@@ -4,45 +4,42 @@ import GameContext from "./game-context";
 const defaultGameState = {
   clickedHeroes: [],
   currScore: 0,
-  isWinner: false,
-  hasLost: false,
+  isNewCards: false,
 };
 
 const gameReducer = (state, action) => {
   if (action.type === "ADD_CLICKED_HERO") {
     const existingHero = state.clickedHeroes.findIndex(
-      (hero) => hero.id === action.hero.id
+      (id) => id === action.id
     );
 
     const isHeroClicked = state.clickedHeroes[existingHero];
-
     let updatedClickedHeroes;
+    let updatedCurrScore;
 
     if (isHeroClicked) {
       state.hasLost = true;
       return defaultGameState;
     } else {
-      updatedClickedHeroes = state.clickedHeroes.concat(action.hero);
+      updatedClickedHeroes = state.clickedHeroes.concat(action.id);
+      updatedCurrScore = state.currScore + 1;
     }
 
     return {
       clickedHeroes: updatedClickedHeroes,
+      currScore: updatedCurrScore,
     };
-  }
-
-  if (action.type === "UPDATE_BEST_SCORE") {
-    state.bestScore += 1;
-  }
-
-  if (action.type === "UPDATE_CURR_SCORE") {
-    state.currScore += 1;
-    if (state.currScore / 12 === 0) {
-      state.isWinner = true;
-    }
   }
 
   if (action.type === "RESET_GAME") {
     return defaultGameState;
+  }
+
+  if (action.type === "NEW_GAME") {
+    return {
+      ...state,
+      isNewCards: true,
+    };
   }
 };
 
@@ -52,16 +49,12 @@ const GameProvider = (props) => {
     defaultGameState
   );
 
-  const addClickedHero = (hero) => {
-    dispatchGameAction({ type: "ADD_CLICKED_HERO" }, hero);
+  const addClickedHero = (id) => {
+    dispatchGameAction({ type: "ADD_CLICKED_HERO", id });
   };
 
-  const updateBestScore = (score) => {
-    dispatchGameAction({ type: "UPDATE_BEST_SCORE" });
-  };
-
-  const updateCurrScore = () => {
-    dispatchGameAction({ type: "UPDATE_CURR_SCORE" });
+  const newGame = () => {
+    dispatchGameAction({ type: "NEW_GAME" });
   };
 
   const resetGame = () => {
@@ -70,13 +63,10 @@ const GameProvider = (props) => {
 
   const gameContext = {
     clickedHeroes: gameState.clickedHeroes,
-    bestScore: 0,
     currScore: gameState.currScore,
-    hasLost: gameState.hasLost,
-    isWinner: gameState.isWinner,
+    isNewCards: gameState.isNewCards,
     addClickedHero,
-    updateBestScore,
-    updateCurrScore,
+    newGame,
     resetGame,
   };
 

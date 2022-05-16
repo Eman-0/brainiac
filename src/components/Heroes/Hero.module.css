@@ -1,3 +1,21 @@
 .hero {
+    width: 6rem;
+    height: 9.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    margin: 0.3rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #00bfff;
+    cursor: pointer;
 }
+
+.hero img {
+    height: 5rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #00bfff;
+}
+
