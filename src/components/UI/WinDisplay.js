@@ -11,7 +11,7 @@ const WinDisplay = (props) => {
         <Fragment>
           <Modal onClose={props.onClick}>
               <h3>You Won!</h3>
-            <NewGameButton onClick={gameCtx.newGame}></NewGameButton>
+            <NewGameButton onClick={props.onClick}></NewGameButton>
           </Modal>
         </Fragment>
       );

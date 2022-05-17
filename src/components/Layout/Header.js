@@ -30,7 +30,7 @@ const Header = (props) => {
 
   return (
     <Fragment>
-      {displayWinner && <WinDisplay onClick={displayWinnerCloseHandler} />}
+      {displayWinner && !gameCtx.isReShuffleCards && <WinDisplay onClick={displayWinnerCloseHandler} />}
       <header className={classes.header}>
         <h1>Eman's Card Game</h1>
       </header>
