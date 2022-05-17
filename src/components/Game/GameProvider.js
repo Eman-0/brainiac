@@ -4,7 +4,7 @@ import GameContext from "./game-context";
 const defaultGameState = {
   clickedHeroes: [],
   currScore: 0,
-  isNewCards: false,
+  isReShuffleCards: false,
 };
 
 const gameReducer = (state, action) => {
@@ -31,6 +31,13 @@ const gameReducer = (state, action) => {
     };
   }
 
+  if (action.type === "SET_NO_RE_SHUFFLE") {
+    return {
+      ...state,
+      isReShuffleCards: false,
+    }
+  }
+
   if (action.type === "RESET_GAME") {
     return defaultGameState;
   }
@@ -38,7 +45,7 @@ const gameReducer = (state, action) => {
   if (action.type === "NEW_GAME") {
     return {
       ...state,
-      isNewCards: true,
+      isReShuffleCards: true,
     };
   }
 };
@@ -53,6 +60,10 @@ const GameProvider = (props) => {
     dispatchGameAction({ type: "ADD_CLICKED_HERO", id });
   };
 
+  const setNoReShuffle = () => {
+    dispatchGameAction({ type: "SET_NO_RE_SHUFFLE"});
+  }
+
   const newGame = () => {
     dispatchGameAction({ type: "NEW_GAME" });
   };
@@ -64,8 +75,9 @@ const GameProvider = (props) => {
   const gameContext = {
     clickedHeroes: gameState.clickedHeroes,
     currScore: gameState.currScore,
-    isNewCards: gameState.isNewCards,
+    isReShuffleCards: gameState.isReShuffleCards,
     addClickedHero,
+    setNoReShuffle,
     newGame,
     resetGame,
   };

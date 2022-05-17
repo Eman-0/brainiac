@@ -1,16 +1,7 @@
-function restartGame (setClickedHeroes, setCurScore, setMaxScore, curScore) {
-    setClickedHeroes([]);
-    setCurScore(0);
-    setMaxScore(curScore);
-}
+const reShuffleCards = (heroList) => {
+  const positionInHeroArray = Math.floor(Math.random() * (500 - 12) + 12);
 
-function PlayRound ( { curScore, setCurScore, setMaxScore, clickedHeroes, setClickedHeroes, hero }) {
-    if (clickedHeroes.includes(hero.name)) {
-        restartGame(setClickedHeroes, setCurScore, setMaxScore, curScore);
-    } else {
-        setClickedHeroes((prevState) => [...prevState, hero.name]);
-        setCurScore(curScore + 1);
-    }  
-}
+  return heroList.slice(positionInHeroArray, positionInHeroArray + 12);
+};
 
-export default PlayRound;
+export default reShuffleCards;
