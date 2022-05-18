@@ -14,6 +14,7 @@ const WinDisplay = (props) => {
       body: JSON.stringify(userData)
     })
     setScoreSubmit(false);
+    props.onClick();
   }
 
   const sendScoreCancelHandler = () => {
@@ -28,9 +29,8 @@ const WinDisplay = (props) => {
         <div className={classes["game-buttons-container"]}>
           <NewGameButton onClick={props.onClick}></NewGameButton>
           <SendScoreButton onClick={() => {setScoreSubmit(true)}}/>
-          {showScoreSubmit && <SendScore bestScore={props.bestScore} onCancel={sendScoreCancelHandler} onSubmit={sendScoreHandler} />}
         </div>
-        
+        {showScoreSubmit && <SendScore bestScore={props.bestScore} onCancel={sendScoreCancelHandler} onSubmit={sendScoreHandler} />}
       </Modal>
     </Fragment>
   );

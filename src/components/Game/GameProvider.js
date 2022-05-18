@@ -38,6 +38,13 @@ const gameReducer = (state, action) => {
     }
   }
 
+  if (action.type === "RESET_CURR_SCORE") {
+    return {
+      ...state,
+      currScore: 0,
+    }
+  }
+
   if (action.type === "RESET_GAME") {
     return defaultGameState;
   }
@@ -72,6 +79,10 @@ const GameProvider = (props) => {
     dispatchGameAction({ type: "RESET_GAME" });
   };
 
+  const resetCurrScore = () => {
+    dispatchGameAction({ type: "RESET_CURR_SCORE" });
+  }
+
   const gameContext = {
     clickedHeroes: gameState.clickedHeroes,
     currScore: gameState.currScore,
@@ -80,6 +91,7 @@ const GameProvider = (props) => {
     setNoReShuffle,
     newGame,
     resetGame,
+    resetCurrScore,
   };
 
   return (

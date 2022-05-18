@@ -9,4 +9,9 @@
     padding: 0.3rem 0.5rem;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
   }
+  .show-scores:hover,
+  .show-scores:active {
+    background-color: #ffe6dc;
+}

@@ -1,0 +1,14 @@
+.score-list  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+
+}
+
+.score-element {
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+}

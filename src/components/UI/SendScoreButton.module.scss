@@ -9,4 +9,10 @@
     padding: 0.3rem 0.5rem;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+  }
+
+  .send-score:hover,
+  .send-score:active {
+    background-color: #ffe6dc;
   }

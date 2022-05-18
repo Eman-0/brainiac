@@ -1,0 +1,20 @@
+
+.place-holder {
+    color: red;
+    padding: 1rem;
+    text-align: center;
+}
+
+.section button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #800000;
+    border-radius: 25px;
+    padding: 0.3rem 0.8rem; 
+  }
+
+  .section button:hover,
+  .section button:active {
+    background-color: #ffe6dc;
+  }

@@ -8,6 +8,7 @@ const GameContext = React.createContext({
     setNoReShuffle: () => {},
     newGame: () => {},
     resetGame: () => {},
+    resetCurrScore: () => {},
 });
 
 export default GameContext;

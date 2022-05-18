@@ -3,10 +3,12 @@
 }
 
 .new-game {
+    color: black;
     font-size: 0.8rem;
 }
 
 .game-buttons-container {
     display: flex;
     justify-content: space-between;
+    padding: 0 0 1rem;
 }

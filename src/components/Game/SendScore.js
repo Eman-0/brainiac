@@ -41,7 +41,7 @@ const SendScore = (props) => {
           formInputValidity.name ? "" : classes.invalid
         }`}
       >
-        <label htmlFor="name">Your Name</label>
+        <label htmlFor="name">Enter Name</label>
         <input type="text" id="name" ref={nameInputRef} />
         {!formInputValidity.name && <p>Please enter a valid name</p>}
       </div>

@@ -59,11 +59,16 @@ const DisplayHighScores = (props) => {
     <ScoreItem key={user.id} id={user.id} name={user.name} score={user.score} />
   ));
 
-  scoreList.sort(function (user1, user2) {return user2.props.score - user1.props.score});
+  scoreList.sort(function (user1, user2) {
+    return user2.props.score - user1.props.score;
+  });
 
   return (
     <Modal onClose={props.hideHighScore}>
-      <section className={classes.scores}>
+      <section className={classes.section}>
+        <div className={classes["place-holder"]}>
+          <span>High Scores</span>
+        </div>
         <Card>
           <ul>{scoreList}</ul>
         </Card>

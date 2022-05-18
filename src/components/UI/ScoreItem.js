@@ -1,11 +1,11 @@
-import classes from "./Score.module.scss";
+import classes from "./ScoreItem.module.scss";
 
 const ScoreItem = (props) => {
   return (
     <li className={classes["score-list"]}>
-      <div>
-        <p>{props.name}</p>
-        <p>{props.score}</p>
+      <div className={classes["score-element"]}>
+        <span>{props.name}</span>
+        <span>{props.score}</span>
       </div>
     </li>
   );
