@@ -1,4 +1,4 @@
-import classes from "./GameSummary.module.css";
+import classes from "./GameSummary.module.scss";
 
 const GameSummary = () => {
     return (

@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import GameContext from "../Game/game-context";
-import classes from "./FetchHeroes.module.css";
+import classes from "./FetchHeroes.module.scss";
 import Hero from "./Hero";
-import reShuffleCards from "../../utils/game-utils";
+import { reShuffleCards } from "../../utils/game-utils";
 
 function FetchHeroes(props) {
   const gameCtx = useContext(GameContext);

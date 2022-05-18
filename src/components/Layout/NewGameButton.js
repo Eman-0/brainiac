@@ -1,10 +1,10 @@
 import { Fragment } from "react";
-import classes from "./NewGameButton.module.css";
+import classes from "./NewGameButton.module.scss";
 
 const NewGameButton = props => {
     return (
         <Fragment>
-            <button onClick={props.onClick} className={classes.newGameButton}>New Game</button>
+            <button className={classes["new-game"]} onClick={props.onClick} >New Game</button>
         </Fragment>
     );
 }

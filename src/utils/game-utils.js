@@ -4,4 +4,8 @@ const reShuffleCards = (heroList) => {
   return heroList.slice(positionInHeroArray, positionInHeroArray + 12);
 };
 
-export default reShuffleCards;
+const isEmpty = (value) => {
+  return value.trim().length === 0;
+};
+
+export { reShuffleCards, isEmpty };
