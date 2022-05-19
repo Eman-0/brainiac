@@ -1,7 +1,7 @@
 import GameProvider from "./components/Game/GameProvider";
 import Header from "./components/Layout/Header";
 import Heroes from "./components/Heroes/Heroes";
-import "./App.module.scss";
+import classes from "./App.module.scss";
 
 function App() {
 

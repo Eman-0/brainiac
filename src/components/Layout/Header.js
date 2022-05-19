@@ -21,7 +21,7 @@ const Header = (props) => {
       setBestScore(bestScore + 1);
     }
 
-    if (currScore > 0 && currScore % 6 === 0) {
+    if (currScore > 0 && currScore % 12 === 0) {
       setDisplayWinner(true);
     }
   }, [currScore]);
