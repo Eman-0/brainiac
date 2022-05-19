@@ -18,3 +18,22 @@
   .section button:active {
     background-color: #ffe6dc;
   }
+
+  @media (min-width: 26.25rem) {
+    .place-holder {
+      font-size: 1.5rem;
+      color: red;
+      padding: 1rem;
+      text-align: center;
+  }
+  
+  .section button {
+      font: 1.5rem;
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid #800000;
+      border-radius: 25px;
+      margin: 1rem;
+      padding: 0.5rem 1rem; 
+    }
+  }

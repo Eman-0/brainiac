@@ -6,4 +6,17 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 26.25rem) {
+  .hero-display {
+    max-width: 32rem;
+    font-size: 1rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
+}

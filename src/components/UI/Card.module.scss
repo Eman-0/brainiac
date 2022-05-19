@@ -1,7 +1,15 @@
 .card {
+    max-height: 12rem;
     color: black;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
     background-color: white;
+    overflow-y: scroll;
+}
+
+@media (min-width: 26.25rem){
+    .card {
+        max-height: 20rem;
+    }
 }

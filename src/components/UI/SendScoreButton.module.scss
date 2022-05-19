@@ -16,3 +16,9 @@
   .send-score:active {
     background-color: #ffe6dc;
   }
+
+  @media (min-width: 26.25rem) {
+    .send-score {
+      font-size: 1rem;
+    }
+  }

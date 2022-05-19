@@ -16,4 +16,10 @@
   .new-game:active {
     background-color: #ffe6dc;
 }
+
+@media (min-width: 26.25rem) {
+  .new-game {
+    font-size: 1rem;
+  }
+}
   
